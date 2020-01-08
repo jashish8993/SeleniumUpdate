@@ -49,7 +49,8 @@ public class BaseClass {
 	@BeforeClass
 	void EmailMethod() throws EmailException
 	{ String emailid=pro.getProperty("Email");
-		if(emailid != null)
+	System.out.println("The value is" +emailid);
+		if(emailid.endsWith("@gmail.com") )
 		{
 		String user=pro.getProperty("user");
 		String password=pro.getProperty("password");
