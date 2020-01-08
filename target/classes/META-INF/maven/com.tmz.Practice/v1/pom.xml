@@ -53,6 +53,15 @@
 			<artifactId>okhttp</artifactId>
 			<version>3.11.0</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.5</version>
+		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 
 		<dependency>
