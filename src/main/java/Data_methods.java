@@ -4,13 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 import org.apache.commons.io.FileUtils;
 
 public class Data_methods extends Utility {
-	static WebDriver driver;	
+	//static WebDriver driver;	
 	static KeywordDefn key=new KeywordDefn();
 
 	@Test
@@ -18,8 +18,7 @@ public class Data_methods extends Utility {
 		try{
 
 			Utilities();
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\ashishj\\workspace\\Hybrid\\geckodriver.exe");
-			driver=new FirefoxDriver();
+			
 			for(int j=0;j<sheetcount;j++)
 
 			{
@@ -31,6 +30,7 @@ public class Data_methods extends Utility {
 					{
 					case "navigate" : 
 					{
+						System.out.println(Data[i][3]);
 						key.navigate(driver,Data[i][3]);
 						break;
 					}

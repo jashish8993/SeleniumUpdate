@@ -8,7 +8,14 @@ public class KeywordDefn	  {
 	WebElement we;
 	public String navigate(WebDriver driver ,String url)
 	{
+		if(url.equals(""))
+	{
+		System.out.println("Url of the application is not accessible");
+	}
+		else
+		{
 		driver.get(url);
+		}
 		return null;	
 	}
 	public  String send_keys(WebDriver driver,String locator,String value,String value3)

@@ -11,7 +11,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 
-public class Utility   {
+public class Utility  extends BaseClass {
 	public static String file="C:\\Users\\ashishj\\workspace\\Hybrid\\ashish.xls";
 	HSSFCell Data1;
 	static FileInputStream files=null;
