@@ -69,7 +69,7 @@ public class Utility   {
 		Object result;
 		if(cell==null)
 			return null;
-		type = cell.getCellTypeEnum();	
+		type = cell.getCellType();	
 		//System.out.println(type);
 
 		switch (type){
