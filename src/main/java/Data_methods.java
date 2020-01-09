@@ -15,12 +15,9 @@ public class Data_methods extends Utility {
 
 	@Test
 	public static void DataMethod() throws IOException,NullPointerException,ArrayIndexOutOfBoundsException, InterruptedException	{
-		try{
-
+		
 			Utilities();
-			
 			for(int j=0;j<sheetcount;j++)
-
 			{
 				String Data[][]=readData(j);
 				for(int i=1;i<rowCount+1;i++)
@@ -114,12 +111,8 @@ public class Data_methods extends Utility {
 
 			}
 		}
-		catch(Exception e)
-		{ 
-			e.printStackTrace();
-			ErrorScreenshot();
-		}
-	}
+		
+	
 	public static void ErrorScreenshot() throws IOException, InterruptedException {
 		File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String filename =  new SimpleDateFormat("yyyyMMddhhmmss'.png'").format(new Date());

@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 
@@ -30,7 +31,7 @@ public class BaseClass {
 		String browser=pro.getProperty("browser");
 		if(browser.equals("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", "C:\\Users\\ashishj\\workspace\\Hybrid\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "Driver\\geckodriver.exe");
 			driver=new FirefoxDriver();	
 		}
 		else if(browser.equals("chrome"))
@@ -65,6 +66,27 @@ public class BaseClass {
 		email.addTo("jashish8993@gmail.com");
 		email.send();
 		}
+	}
+	
+	@AfterMethod
+	public void fetchMostRecentTestResult(ITestResult result) {
+
+	    int status = result.getStatus();
+	    System.out.println(result.getStatus());
+
+	    switch (status) {
+	        case ITestResult.SUCCESS:
+	            System.out.println("Your Test case is passed");
+	            break;
+	        case ITestResult.FAILURE:
+	        	System.out.println("Your Test case is failed");
+	            break;
+	        case ITestResult.SKIP:
+	            System.out.println("Your Test case is passed");
+	            break;
+	        default:
+	            throw new RuntimeException("Invalid status");
+	    }
 	}
 
 }

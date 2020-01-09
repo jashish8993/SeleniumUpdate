@@ -6,6 +6,7 @@
       <class name="Data_methods">
         <methods>
           <include name="setup"/>
+          <include name="fetchMostRecentTestResult"/>
           <include name="DataMethod"/>
           <include name="EmailMethod"/>
         </methods>
