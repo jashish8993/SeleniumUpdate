@@ -1,14 +1,7 @@
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-import org.apache.commons.io.FileUtils;
-
 public class Data_methods extends Utility {
 	//static WebDriver driver;	
 	static KeywordDefn key=new KeywordDefn();
@@ -113,10 +106,5 @@ public class Data_methods extends Utility {
 		}
 		
 	
-	public static void ErrorScreenshot() throws IOException, InterruptedException {
-		File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String filename =  new SimpleDateFormat("yyyyMMddhhmmss'.png'").format(new Date());
-		File dest = new File("C:\\Users\\ashish\\Desktop\\Selenium\\error_screen\\error" + filename);
-		FileUtils.copyFile(scr, dest);
-	}
+	
 }

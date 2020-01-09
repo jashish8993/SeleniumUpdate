@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6049" started-at="2020-01-09T10:17:30Z" finished-at="2020-01-09T10:17:36Z">
+  <suite name="Default suite" duration-ms="9788" started-at="2020-01-09T11:05:39Z" finished-at="2020-01-09T11:05:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6049" started-at="2020-01-09T10:17:30Z" finished-at="2020-01-09T10:17:36Z">
+    <test name="Default test" duration-ms="9788" started-at="2020-01-09T11:05:39Z" finished-at="2020-01-09T11:05:48Z">
       <class name="Data_methods">
-        <test-method status="PASS" signature="setup()[pri:0, instance:Data_methods@26653222]" name="setup" is-config="true" duration-ms="10652" started-at="2020-01-09T15:47:20Z" finished-at="2020-01-09T15:47:30Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Data_methods@26653222]" name="setup" is-config="true" duration-ms="12078" started-at="2020-01-09T16:35:27Z" finished-at="2020-01-09T16:35:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="EmailMethod()[pri:0, instance:Data_methods@26653222]" name="EmailMethod" is-config="true" duration-ms="1" started-at="2020-01-09T15:47:30Z" finished-at="2020-01-09T15:47:30Z">
+        <test-method status="PASS" signature="EmailMethod()[pri:0, instance:Data_methods@26653222]" name="EmailMethod" is-config="true" duration-ms="0" started-at="2020-01-09T16:35:39Z" finished-at="2020-01-09T16:35:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmailMethod -->
-        <test-method status="FAIL" signature="DataMethod()[pri:0, instance:Data_methods@26653222]" name="DataMethod" duration-ms="6020" started-at="2020-01-09T15:47:30Z" finished-at="2020-01-09T15:47:36Z">
+        <test-method status="FAIL" signature="DataMethod()[pri:0, instance:Data_methods@26653222]" name="DataMethod" duration-ms="8397" started-at="2020-01-09T16:35:39Z" finished-at="2020-01-09T16:35:47Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Unable to locate element: #usernames
@@ -23,8 +23,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DT01503', ip: '192.168.10.85', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 66.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 9620, moz:profile: C:\Users\ashishj\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 6.1, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4a5b7b5c-3eda-4278-9f2e-cf8d596a73da
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 66.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 208, moz:profile: C:\Users\ashishj\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 6.1, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 79df1df4-f078-4324-a09f-f355a611f32c
 *** Element info: {Using=id, value=usernames}]]>
             </message>
             <full-stacktrace>
@@ -33,8 +33,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DT01503', ip: '192.168.10.85', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_51'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 66.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 9620, moz:profile: C:\Users\ashishj\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 6.1, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 4a5b7b5c-3eda-4278-9f2e-cf8d596a73da
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 66.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 208, moz:profile: C:\Users\ashishj\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 6.1, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 79df1df4-f078-4324-a09f-f355a611f32c
 *** Element info: {Using=id, value=usernames}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -82,7 +82,7 @@ Session ID: 4a5b7b5c-3eda-4278-9f2e-cf8d596a73da
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DataMethod -->
-        <test-method status="PASS" signature="fetchMostRecentTestResult(org.testng.ITestResult)[pri:0, instance:Data_methods@26653222]" name="fetchMostRecentTestResult" is-config="true" duration-ms="1" started-at="2020-01-09T15:47:36Z" finished-at="2020-01-09T15:47:36Z">
+        <test-method status="PASS" signature="fetchMostRecentTestResult(org.testng.ITestResult)[pri:0, instance:Data_methods@26653222]" name="fetchMostRecentTestResult" is-config="true" duration-ms="1341" started-at="2020-01-09T16:35:47Z" finished-at="2020-01-09T16:35:48Z">
           <params>
             <param index="0">
               <value>

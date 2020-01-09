@@ -2,12 +2,17 @@ import java.io.File;
 import java.io.FileInputStream;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -69,7 +74,7 @@ public class BaseClass {
 	}
 	
 	@AfterMethod
-	public void fetchMostRecentTestResult(ITestResult result) {
+	public void fetchMostRecentTestResult(ITestResult result) throws IOException, InterruptedException {
 
 	    int status = result.getStatus();
 	    System.out.println(result.getStatus());
@@ -80,6 +85,7 @@ public class BaseClass {
 	            break;
 	        case ITestResult.FAILURE:
 	        	System.out.println("Your Test case is failed");
+	        	ErrorScreenshot();
 	            break;
 	        case ITestResult.SKIP:
 	            System.out.println("Your Test case is passed");
@@ -87,6 +93,12 @@ public class BaseClass {
 	        default:
 	            throw new RuntimeException("Invalid status");
 	    }
+	}
+	public static void ErrorScreenshot() throws IOException, InterruptedException {
+		File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		String filename =  new SimpleDateFormat("yyyyMMddhhmmss'.png'").format(new Date());
+		File dest = new File("C:\\Users\\ashishj\\Desktop\\Selenium\\error_screen\\error" + filename);
+		FileUtils.copyFile(scr, dest);
 	}
 
 }
