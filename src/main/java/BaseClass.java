@@ -25,11 +25,12 @@ public class BaseClass {
 	static WebDriver driver;
 	Properties pro;
 	Email email;
-	
+	String cpath=System.getProperty("user.dir")+ "\\src\\main\\java\\config.properties";
+	 String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\error";
 	@BeforeSuite
 	public void setup() throws IOException
 	{
-		File file= new File("C:\\Users\\ashishj\\workspace\\Hybrid\\src\\main\\java\\config.properties");
+		File file= new File(cpath);
 		FileInputStream io=new FileInputStream(file);
 		pro=new Properties();
 		pro.load(io);
@@ -94,10 +95,10 @@ public class BaseClass {
 	            throw new RuntimeException("Invalid status");
 	    }
 	}
-	public static void ErrorScreenshot() throws IOException, InterruptedException {
+	public  void ErrorScreenshot() throws IOException, InterruptedException {
 		File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String filename =  new SimpleDateFormat("yyyyMMddhhmmss'.png'").format(new Date());
-		File dest = new File("C:\\Users\\ashishj\\Desktop\\Selenium\\error_screen\\error" + filename);
+		File dest = new File(spath + filename);
 		FileUtils.copyFile(scr, dest);
 	}
 

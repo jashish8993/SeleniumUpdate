@@ -12,7 +12,7 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 
 public class Utility  extends BaseClass {
-	public static String file="C:\\Users\\ashishj\\workspace\\Hybrid\\ashish.xls";
+	public static String fpath=System.getProperty("user.dir") + "\\ashish.xls";
 	HSSFCell Data1;
 	static FileInputStream files=null;
 	static HSSFWorkbook wb=null;
@@ -23,7 +23,7 @@ public class Utility  extends BaseClass {
 
 	public static void Utilities() throws IOException,NullPointerException
 	{
-		files=new FileInputStream(file);
+		files=new FileInputStream(fpath);
 		wb=new HSSFWorkbook(files);
 		sheetcount=wb.getNumberOfSheets();
 	}
