@@ -1,5 +1,4 @@
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -108,11 +107,11 @@ public class KeywordDefn	  {
 		}
 		return null;
 	}
-	public  String Wait(WebDriver driver, String data) 
+	public  String Wait(WebDriver driver) 
 	{
-		Double d = Double.parseDouble(data.trim());
-		long l = d.longValue();
-		driver.manage().timeouts().implicitlyWait(l, TimeUnit.SECONDS);
+		//Double d = Double.parseDouble(data.trim());
+		//long l = d.longValue();
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		return null;
 	}
 	public  String gettext(WebDriver driver,String locator,String value)

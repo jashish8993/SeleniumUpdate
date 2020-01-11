@@ -27,6 +27,7 @@ public class BaseClass {
 	Email email;
 	String cpath=System.getProperty("user.dir")+ "\\src\\main\\java\\config.properties";
 	 String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\error";
+	 
 	@BeforeSuite
 	public void setup() throws IOException
 	{
@@ -101,5 +102,9 @@ public class BaseClass {
 		File dest = new File(spath + filename);
 		FileUtils.copyFile(scr, dest);
 	}
-
+@AfterSuite
+void Teardown()
+{
+	driver.quit();
+	}
 }

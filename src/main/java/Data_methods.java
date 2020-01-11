@@ -2,18 +2,19 @@ import java.io.IOException;
 //import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-public class Data_methods extends Utility {
+public class Data_methods extends BaseClass {
 	//static WebDriver driver;	
 	static KeywordDefn key=new KeywordDefn();
+	static Utility util=new Utility();
 
 	@Test
 	public static void DataMethod() throws IOException,NullPointerException,ArrayIndexOutOfBoundsException, InterruptedException	{
 		
-			Utilities();
-			for(int j=0;j<sheetcount;j++)
+			//util.Utilities();
+			for(int j=0;j<util.sheetcount;j++)
 			{
-				String Data[][]=readData(j);
-				for(int i=1;i<rowCount+1;i++)
+				String Data[][]=util.readData(j);
+				for(int i=1;i<util.rowCount+1;i++)
 				{
 					System.out.println("Currently performing \t : " + Data[i][1]);
 					switch(Data[i][1])
@@ -46,7 +47,7 @@ public class Data_methods extends Utility {
 					}
 					case "Wait":
 					{
-						key.Wait(driver,Data[i][3]);
+						key.Wait(driver);
 						break;
 					}
 					case "close":

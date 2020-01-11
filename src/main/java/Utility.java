@@ -1,8 +1,6 @@
 import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-
 //import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -17,17 +15,23 @@ public class Utility  extends BaseClass {
 	static FileInputStream files=null;
 	static HSSFWorkbook wb=null;
 	static HSSFSheet ws=null;
-	static int rowCount;
-	public static int sheetcount;
-	public static int colCount;
+	int rowCount;
+	public  int sheetcount;
+	public  int colCount;
 
-	public static void Utilities() throws IOException,NullPointerException
+	public  Utility() throws NullPointerException
 	{
-		files=new FileInputStream(fpath);
-		wb=new HSSFWorkbook(files);
-		sheetcount=wb.getNumberOfSheets();
+		try {
+			files=new FileInputStream(fpath);
+			wb=new HSSFWorkbook(files);
+			sheetcount=wb.getNumberOfSheets();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 	}
-	public static String[][] readData(int index) throws IOException,NullPointerException	 {	
+	public  String[][] readData(int index) throws IOException,NullPointerException	 {	
 		ws=wb.getSheetAt(index);
 		rowCount=ws.getLastRowNum();
 		//System.out.println(rowCount);
