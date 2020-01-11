@@ -97,7 +97,7 @@ public class Data_methods extends BaseClass {
 					}
 					default:
 					{
-						System.out.println("you have entered a incorrect keyword");
+						logger.info("you have entered a incorrect keyword");
 					}
 
 					}

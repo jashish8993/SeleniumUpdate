@@ -11,6 +11,8 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -26,11 +28,15 @@ public class BaseClass {
 	Properties pro;
 	Email email;
 	String cpath=System.getProperty("user.dir")+ "\\src\\main\\java\\config.properties";
-	 String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\error";
+	String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\error";
+	public static Logger logger;
 	 
 	@BeforeSuite
 	public void setup() throws IOException
 	{
+		logger=Logger.getLogger(Data_methods.class);
+		PropertyConfigurator.configure("log4j.properties");
+		
 		File file= new File(cpath);
 		FileInputStream io=new FileInputStream(file);
 		pro=new Properties();
@@ -50,7 +56,7 @@ public class BaseClass {
 			}
 		else
 		{
-			System.out.println("You have selected a invalid browser");
+			logger.info("You have selected a invalid browser");
 		}
 	}
 	
@@ -79,11 +85,11 @@ public class BaseClass {
 	public void fetchMostRecentTestResult(ITestResult result) throws IOException, InterruptedException {
 
 	    int status = result.getStatus();
-	    System.out.println(result.getStatus());
+	    //System.out.println(result.getStatus());
 
 	    switch (status) {
 	        case ITestResult.SUCCESS:
-	            System.out.println("Your Test case is passed");
+	           logger.info("Your Test case is passed");
 	            break;
 	        case ITestResult.FAILURE:
 	        	System.out.println("Your Test case is failed");

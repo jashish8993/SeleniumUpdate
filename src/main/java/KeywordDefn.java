@@ -1,15 +1,17 @@
 import java.util.concurrent.TimeUnit;
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-public class KeywordDefn	  {
+public class KeywordDefn extends BaseClass	  {
 	WebElement we;
 	public String navigate(WebDriver driver ,String url)
 	{
 		if(url.equals(""))
 	{
-		System.out.println("Url of the application is not accessible");
+		logger.info("Url of the application is not accessible");
 	}
 		else
 		{
