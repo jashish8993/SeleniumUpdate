@@ -10,7 +10,6 @@ public class Data_methods extends BaseClass {
 	@Test
 	public static void DataMethod() throws IOException,NullPointerException,ArrayIndexOutOfBoundsException, InterruptedException	{
 		
-			//util.Utilities();
 			for(int j=0;j<util.sheetcount;j++)
 			{
 				String Data[][]=util.readData(j);
@@ -19,23 +18,23 @@ public class Data_methods extends BaseClass {
 					System.out.println("Currently performing \t : " + Data[i][1]);
 					switch(Data[i][1])
 					{
-					case "navigate" : 
+					case "Navigate" : 
 					{
 						System.out.println(Data[i][3]);
 						key.navigate(driver,Data[i][3]);
 						break;
 					}
-					case "send_keys" : 
+					case "InputText" : 
 					{
 						key.send_keys(driver,Data[i][2],Data[i][3],Data[i][4]);
 						break;
 					}
-					case "click" :
+					case "Click" :
 					{
 						key.click(driver,Data[i][2],Data[i][4]);
 						break;
 					}
-					case "quit" :
+					case "Quit" :
 					{
 						key.quit(driver);
 						break;
@@ -50,27 +49,27 @@ public class Data_methods extends BaseClass {
 						key.Wait(driver);
 						break;
 					}
-					case "close":
+					case "Close":
 					{
 						key.Close(driver);
 						break;
 					}
-					case "gettext":
+					case "Gettext":
 					{
 						key.gettext(driver,Data[i][4],Data[i][2]);
 						break;
 					}
-					case "submit":
+					case "Submit":
 					{
 						key.submit(driver,Data[i][2]);
 						break;
 					}
-					case "forward":
+					case "Forward":
 					{
 						key.forward(driver);
 						break;
 					}
-					case "back":
+					case "Back":
 					{
 						key.back(driver);
 						break;
@@ -80,17 +79,17 @@ public class Data_methods extends BaseClass {
 						key.Title(driver);
 						break;
 					}
-					case "currenturl":
+					case "Currenturl":
 					{
 						key.curl(driver);
 						break;
 					}
-					case "radiob":
+					case "Radiobutton":
 					{
 						key.radiob(driver,Data[i][2]);
 						break;
 					}
-					case "checkbox":
+					case "Checkbox":
 					{
 						key.checkbox(driver,Data[i][2]);
 						break;
@@ -105,7 +104,4 @@ public class Data_methods extends BaseClass {
 
 			}
 		}
-		
-	
-	
 }
