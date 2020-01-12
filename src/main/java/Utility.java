@@ -26,10 +26,10 @@ public class Utility  extends BaseClass {
 			wb=new HSSFWorkbook(files);
 			sheetcount=wb.getNumberOfSheets();
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
-		
+
 	}
 	public  String[][] readData(int index) throws IOException,NullPointerException	 {	
 		ws=wb.getSheetAt(index);

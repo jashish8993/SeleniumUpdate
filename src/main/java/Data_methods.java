@@ -1,107 +1,104 @@
 import java.io.IOException;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 public class Data_methods extends BaseClass {
-	//static WebDriver driver;	
 	static KeywordDefn key=new KeywordDefn();
 	static Utility util=new Utility();
 
 	@Test
 	public static void DataMethod() throws IOException,NullPointerException,ArrayIndexOutOfBoundsException, InterruptedException	{
-		
-			for(int j=0;j<util.sheetcount;j++)
-			{
-				String Data[][]=util.readData(j);
-				for(int i=1;i<util.rowCount+1;i++)
-				{
-					System.out.println("Currently performing \t : " + Data[i][1]);
-					switch(Data[i][1])
-					{
-					case "Navigate" : 
-					{
-						System.out.println(Data[i][3]);
-						key.navigate(driver,Data[i][3]);
-						break;
-					}
-					case "InputText" : 
-					{
-						key.send_keys(driver,Data[i][2],Data[i][3],Data[i][4]);
-						break;
-					}
-					case "Click" :
-					{
-						key.click(driver,Data[i][2],Data[i][4]);
-						break;
-					}
-					case "Quit" :
-					{
-						key.quit(driver);
-						break;
-					}
-					case "Select":
-					{
-						key.Select(driver,Data[i][3],Data[i][2],Data[i][4]);
-						break;
-					}
-					case "Wait":
-					{
-						key.Wait(driver);
-						break;
-					}
-					case "Close":
-					{
-						key.Close(driver);
-						break;
-					}
-					case "Gettext":
-					{
-						key.gettext(driver,Data[i][4],Data[i][2]);
-						break;
-					}
-					case "Submit":
-					{
-						key.submit(driver,Data[i][2]);
-						break;
-					}
-					case "Forward":
-					{
-						key.forward(driver);
-						break;
-					}
-					case "Back":
-					{
-						key.back(driver);
-						break;
-					}
-					case "Title":
-					{
-						key.Title(driver);
-						break;
-					}
-					case "Currenturl":
-					{
-						key.curl(driver);
-						break;
-					}
-					case "Radiobutton":
-					{
-						key.radiob(driver,Data[i][2]);
-						break;
-					}
-					case "Checkbox":
-					{
-						key.checkbox(driver,Data[i][2]);
-						break;
-					}
-					default:
-					{
-						logger.info("you have entered a incorrect keyword");
-					}
 
-					}
+		for(int j=0;j<util.sheetcount;j++)
+		{
+			String Data[][]=util.readData(j);
+			for(int i=1;i<util.rowCount+1;i++)
+			{
+				System.out.println("Currently performing \t : " + Data[i][1]);
+				switch(Data[i][1])
+				{
+				case "Navigate"  : 
+				{
+					System.out.println(Data[i][3]);
+					key.navigate(driver,Data[i][3]);
+					break;
+				}
+				case "InputText" : 
+				{
+					key.send_keys(driver,Data[i][2],Data[i][3],Data[i][4]);
+					break;
+				}
+				case "Click" :
+				{
+					key.click(driver,Data[i][2],Data[i][4]);
+					break;
+				}
+				case "Quit" :
+				{
+					key.quit(driver);
+					break;
+				}
+				case "Select":
+				{
+					key.Select(driver,Data[i][3],Data[i][2],Data[i][4]);
+					break;
+				}
+				case "Wait":
+				{
+					key.Wait(driver);
+					break;
+				}
+				case "Close":
+				{
+					key.Close(driver);
+					break;
+				}
+				case "Gettext":
+				{
+					key.gettext(driver,Data[i][4],Data[i][2]);
+					break;
+				}
+				case "Submit":
+				{
+					key.submit(driver,Data[i][2]);
+					break;
+				}
+				case "Forward":
+				{
+					key.forward(driver);
+					break;
+				}
+				case "Back":
+				{
+					key.back(driver);
+					break;
+				}
+				case "Title":
+				{
+					key.Title(driver);
+					break;
+				}
+				case "Currenturl":
+				{
+					key.curl(driver);
+					break;
+				}
+				case "Radiobutton":
+				{
+					key.radiob(driver,Data[i][2]);
+					break;
+				}
+				case "Checkbox":
+				{
+					key.checkbox(driver,Data[i][2]);
+					break;
+				}
+				default:
+				{
+					logger.info("you have entered a incorrect keyword");
 				}
 
+				}
 			}
+
 		}
+	}
 }

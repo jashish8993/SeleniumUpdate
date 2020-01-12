@@ -1,6 +1,4 @@
 import java.util.concurrent.TimeUnit;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,12 +8,12 @@ public class KeywordDefn extends BaseClass	  {
 	public String navigate(WebDriver driver ,String url)
 	{
 		if(url.equals(""))
-	{
-		logger.info("Url of the application is not accessible");
-	}
+		{
+			logger.info("Url of the application is not accessible");
+		}
 		else
 		{
-		driver.get(url);
+			driver.get(url);
 		}
 		return null;	
 	}
