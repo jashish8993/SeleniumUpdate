@@ -107,11 +107,10 @@ public class KeywordDefn extends BaseClass	  {
 		}
 		return null;
 	}
-	public  String Wait(WebDriver driver) 
+	public  String Wait(WebDriver driver,String data) 
 	{
-		//Double d = Double.parseDouble(data.trim());
-		//long l = d.longValue();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		int time=Integer.parseInt(data);
+		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 		return null;
 	}
 	public  String gettext(WebDriver driver,String locator,String value)

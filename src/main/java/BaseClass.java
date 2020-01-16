@@ -26,7 +26,7 @@ public class BaseClass {
 	Properties pro;
 	Email email;
 	String cpath=System.getProperty("user.dir")+ "\\src\\main\\java\\config.properties";
-	String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\error";
+	String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\Error";
 	public static Logger logger;
 
 	@BeforeSuite
@@ -90,11 +90,11 @@ public class BaseClass {
 			logger.info("Your Test case is passed");
 			break;
 		case ITestResult.FAILURE:
-			System.out.println("Your Test case is failed");
+			logger.info("Your Test case is failed");
 			ErrorScreenshot();
 			break;
 		case ITestResult.SKIP:
-			System.out.println("Your Test case is passed");
+			logger.info("Your Test case is passed");
 			break;
 		default:
 			throw new RuntimeException("Invalid status");

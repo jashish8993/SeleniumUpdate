@@ -12,7 +12,7 @@ public class Data_methods extends BaseClass {
 			String Data[][]=util.readData(j);
 			for(int i=1;i<util.rowCount+1;i++)
 			{
-				System.out.println("Currently performing \t : " + Data[i][1]);
+				logger.info("Currently performing \t : " + Data[i][0]);
 				switch(Data[i][1])
 				{
 				case "Navigate"  : 
@@ -43,7 +43,7 @@ public class Data_methods extends BaseClass {
 				}
 				case "Wait":
 				{
-					key.Wait(driver);
+					key.Wait(driver, Data[i][3]);
 					break;
 				}
 				case "Close":
