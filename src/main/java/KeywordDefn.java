@@ -121,21 +121,21 @@ public class KeywordDefn extends BaseClass	  {
 	{
 		int times=Integer.parseInt(time);
 		WebDriverWait wait= new WebDriverWait(driver,times);
-		
+
 		switch(locator)
 		{
-			case "xpath": {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lvalue)));
+		case "xpath": {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lvalue)));
 		}
-			case "id": {
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(lvalue)));
-				}
-			case "name": {
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(lvalue)));
-				}
+		case "id": {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(lvalue)));
+		}
+		case "name": {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(lvalue)));
+		}
 		}
 		return null;
-		
+
 	}
 	public  String gettext(WebDriver driver,String locator,String value)
 	{

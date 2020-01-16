@@ -17,7 +17,7 @@ public class Data_methods extends BaseClass {
 				{
 				case "Navigate"  : 
 				{
-					System.out.println(Data[i][3]);
+					//System.out.println(Data[i][3]);
 					key.navigate(driver,Data[i][3]);
 					break;
 				}
@@ -95,7 +95,7 @@ public class Data_methods extends BaseClass {
 				{
 					key.Ewait(driver,Data[i][2],Data[i][3],Data[i][4]);
 				}
-				
+
 				default:
 				{
 					logger.info("you have entered a incorrect keyword");
