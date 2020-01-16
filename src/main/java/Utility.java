@@ -74,7 +74,7 @@ public class Utility  extends BaseClass {
 		if(cell==null)
 			return null;
 		type = cell.getCellType();	
-		System.out.println(type);
+		//System.out.println(type);
 
 		switch (type){
 		case NUMERIC :
