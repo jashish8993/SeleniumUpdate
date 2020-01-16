@@ -61,7 +61,7 @@ public class BaseClass {
 	@AfterClass
 	void EmailMethod() throws EmailException
 	{ String emailid=pro.getProperty("Email");
-	System.out.println("The value is" +emailid);
+	//System.out.println("The value is" +emailid);
 	if(emailid.endsWith("@gmail.com") )
 	{
 		String user=pro.getProperty("user");
@@ -90,7 +90,7 @@ public class BaseClass {
 			logger.info("Your Test case is passed");
 			break;
 		case ITestResult.FAILURE:
-			System.out.println("Your Test case is failed");
+			logger.info("Your Test case is failed");
 			ErrorScreenshot();
 			break;
 		case ITestResult.SKIP:

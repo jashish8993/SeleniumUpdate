@@ -111,7 +111,7 @@ public class KeywordDefn extends BaseClass	  {
 	{
 		//Double d = Double.parseDouble(data.trim());
 		//long l = d.longValue();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		return null;
 	}
 	public  String gettext(WebDriver driver,String locator,String value)

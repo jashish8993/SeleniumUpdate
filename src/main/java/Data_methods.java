@@ -19,6 +19,7 @@ public class Data_methods extends BaseClass {
 				{
 					System.out.println(Data[i][3]);
 					key.navigate(driver,Data[i][3]);
+					logger.info("url is opened");
 					break;
 				}
 				case "InputText" : 
