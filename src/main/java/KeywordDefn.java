@@ -2,7 +2,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 public class KeywordDefn extends BaseClass	  {
 	WebElement we;
 	public String navigate(WebDriver driver ,String url)
@@ -17,42 +19,42 @@ public class KeywordDefn extends BaseClass	  {
 		}
 		return null;	
 	}
-	public  String send_keys(WebDriver driver,String locator,String value,String value3)
+	public  String send_keys(WebDriver driver,String locator,String data,String value3)
 	{
 		switch (value3) { 
 		case "xpath":{
-			driver.findElement(By.xpath(locator)).sendKeys(value);
+			driver.findElement(By.xpath(locator)).sendKeys(data);
 			break;
 		}
 		case "name":{
-			driver.findElement(By.name(locator)).sendKeys(value);
+			driver.findElement(By.name(locator)).sendKeys(data);
 			break;
 		}
 		case "id":
 		{
-			driver.findElement(By.id(locator)).sendKeys(value);
+			driver.findElement(By.id(locator)).sendKeys(data);
 			break;
 		}
 		}
 		return null;
 	}
-	public  String click(WebDriver driver, String locator, String value3)
+	public  String click(WebDriver driver, String lvalue, String locator)
 	{
-		switch (value3) { 
+		switch (locator) { 
 		case "xpath":
 		{
-			WebElement we=driver.findElement(By.xpath(locator));
+			WebElement we=driver.findElement(By.xpath(lvalue));
 			we.click();
 			break;
 		}
 		case "name":{
-			WebElement we=driver.findElement(By.id(locator));
+			WebElement we=driver.findElement(By.id(lvalue));
 			we.click();
 			break;
 		}
 		case "id":
 		{
-			WebElement we=driver.findElement(By.id(locator));
+			WebElement we=driver.findElement(By.id(lvalue));
 			we.click();
 			break;
 		}
@@ -107,11 +109,33 @@ public class KeywordDefn extends BaseClass	  {
 		}
 		return null;
 	}
-	public  String Wait(WebDriver driver,String data) 
+	public  String IWait(WebDriver driver,String data) 
 	{
 		int time=Integer.parseInt(data);
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 		return null;
+	}
+
+
+	public String Ewait(WebDriver driver, String locator, String time, String lvalue)
+	{
+		int times=Integer.parseInt(time);
+		WebDriverWait wait= new WebDriverWait(driver,times);
+		
+		switch(locator)
+		{
+			case "xpath": {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lvalue)));
+		}
+			case "id": {
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(lvalue)));
+				}
+			case "name": {
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(lvalue)));
+				}
+		}
+		return null;
+		
 	}
 	public  String gettext(WebDriver driver,String locator,String value)
 	{

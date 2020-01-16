@@ -41,9 +41,9 @@ public class Data_methods extends BaseClass {
 					key.Select(driver,Data[i][3],Data[i][2],Data[i][4]);
 					break;
 				}
-				case "Wait":
+				case "IWait":
 				{
-					key.Wait(driver, Data[i][3]);
+					key.IWait(driver, Data[i][3]);
 					break;
 				}
 				case "Close":
@@ -91,6 +91,11 @@ public class Data_methods extends BaseClass {
 					key.checkbox(driver,Data[i][2]);
 					break;
 				}
+				case "EWait":
+				{
+					key.Ewait(driver,Data[i][2],Data[i][3],Data[i][4]);
+				}
+				
 				default:
 				{
 					logger.info("you have entered a incorrect keyword");
