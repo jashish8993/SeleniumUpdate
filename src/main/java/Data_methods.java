@@ -12,12 +12,12 @@ public class Data_methods extends BaseClass {
 			String Data[][]=util.readData(j);
 			for(int i=1;i<util.rowCount+1;i++)
 			{
-				System.out.println("Currently performing \t : " + Data[i][1]);
+				logger.info("Currently performing \t : " + Data[i][0]);
 				switch(Data[i][1])
 				{
 				case "Navigate"  : 
 				{
-					System.out.println(Data[i][3]);
+					//System.out.println(Data[i][3]);
 					key.navigate(driver,Data[i][3]);
 					logger.info("url is opened");
 					break;
@@ -42,9 +42,9 @@ public class Data_methods extends BaseClass {
 					key.Select(driver,Data[i][3],Data[i][2],Data[i][4]);
 					break;
 				}
-				case "Wait":
+				case "IWait":
 				{
-					key.Wait(driver);
+					key.IWait(driver, Data[i][3]);
 					break;
 				}
 				case "Close":
@@ -92,6 +92,11 @@ public class Data_methods extends BaseClass {
 					key.checkbox(driver,Data[i][2]);
 					break;
 				}
+				case "EWait":
+				{
+					key.Ewait(driver,Data[i][2],Data[i][3],Data[i][4]);
+				}
+
 				default:
 				{
 					logger.info("you have entered a incorrect keyword");

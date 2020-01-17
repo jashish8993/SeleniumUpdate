@@ -26,20 +26,22 @@ public class BaseClass {
 	Properties pro;
 	Email email;
 	String cpath=System.getProperty("user.dir")+ "\\src\\main\\java\\config.properties";
-	String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\error";
+	String spath=System.getProperty("user.dir") + "\\Selenium\\Error_Screen\\Error";
 	public static Logger logger;
-
+	File file;
+	FileInputStream io;
+	String browser;
 	@BeforeSuite
 	public void setup() throws IOException
 	{
 		logger=Logger.getLogger(Data_methods.class);
 		PropertyConfigurator.configure("log4j.properties");
 
-		File file= new File(cpath);
-		FileInputStream io=new FileInputStream(file);
+		file= new File(cpath);
+		io=new FileInputStream(file);
 		pro=new Properties();
 		pro.load(io);
-		String browser=pro.getProperty("browser");
+		browser=pro.getProperty("browser");
 		if(browser.equals("firefox"))
 		{
 			System.setProperty("webdriver.gecko.driver", "Driver\\geckodriver.exe");
@@ -55,6 +57,26 @@ public class BaseClass {
 		else
 		{
 			logger.info("You have selected a invalid browser");
+		}
+	}
+	@BeforeMethod
+	void CheckBrowserOpen()
+	{
+		if(driver.toString().contains("null"))
+		{
+			String browser=pro.getProperty("browser");
+			if(browser.equals("firefox"))
+			{
+				System.setProperty("webdriver.gecko.driver", "Driver\\geckodriver.exe");
+				driver=new FirefoxDriver();	
+			}
+			else if(browser.equals("chrome"))
+			{
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--no-sandbox");
+				System.setProperty("webdriver.chrome.driver","Driver\\chromedriver.exe");
+				driver=new ChromeDriver();
+			}
 		}
 	}
 
@@ -94,22 +116,21 @@ public class BaseClass {
 			ErrorScreenshot();
 			break;
 		case ITestResult.SKIP:
-			System.out.println("Your Test case is passed");
+			logger.info("Your Test case is passed");
 			break;
 		default:
 			throw new RuntimeException("Invalid status");
 		}
 	}
-	
-	
+
 	public  void ErrorScreenshot() throws IOException, InterruptedException {
 		File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String filename =  new SimpleDateFormat("yyyyMMddhhmmss'.png'").format(new Date());
 		File dest = new File(spath + filename);
 		FileUtils.copyFile(scr, dest);
 	}
-	
-	
+
+
 	@AfterSuite
 	void Teardown()
 	{
