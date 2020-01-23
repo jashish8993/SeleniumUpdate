@@ -10,7 +10,12 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 
 public class Utility  extends BaseClass {
+	static Sheet s=new Sheet();
+	//String str=System.getProperty("user.dir") + "\\" + s.sheetname();
+	Sheet sh=new Sheet();
+	
 	public static String fpath=System.getProperty("user.dir") + "\\ashish.xls";
+	String fpath1;
 	HSSFCell Data1;
 	static FileInputStream files=null;
 	static HSSFWorkbook wb=null;
@@ -22,7 +27,14 @@ public class Utility  extends BaseClass {
 	public  Utility() throws NullPointerException
 	{
 		try {
-			files=new FileInputStream(fpath);
+			String[] str=sh.sheetname();
+			for(int i=1;i<str.length;i++)
+			{
+				fpath1=System.getProperty("user.dir")+ "\\" + str[i];
+				System.out.println(fpath1);
+			}
+
+			files=new FileInputStream(fpath1);
 			wb=new HSSFWorkbook(files);
 			sheetcount=wb.getNumberOfSheets();
 		} catch (Exception e) {

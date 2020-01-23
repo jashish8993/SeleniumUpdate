@@ -21,12 +21,10 @@ public class Sheet {
 	int colcount;
 	public HSSFCell cell;
 	public HSSFRow row;
-	String Data[]=new String[10];
+	String Data[]=new String[3];
 
 	public String[]  sheetname() throws Exception 
 	{
-
-
 			file=new File("C:\\Users\\jashi\\Desktop\\New Microsoft Excel Worksheet.xls");
 			str=new FileInputStream(file);
 			wb=new HSSFWorkbook(str);
