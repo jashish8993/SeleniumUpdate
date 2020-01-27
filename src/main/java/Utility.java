@@ -13,13 +13,13 @@ public class Utility  extends BaseClass {
 	static Sheet s=new Sheet();
 	//String str=System.getProperty("user.dir") + "\\" + s.sheetname();
 	Sheet sh=new Sheet();
-	
+
 	//public static String fpath=System.getProperty("user.dir") + "\\ashish.xls";
 	String fpath1;
 	HSSFCell Data1;
-	 FileInputStream files=null;
-	 static HSSFWorkbook wb=null;
-	 HSSFSheet ws=null;
+	FileInputStream files=null;
+	static HSSFWorkbook wb=null;
+	HSSFSheet ws=null;
 	int rowCount;
 	public  int sheetcount;
 	public  int colCount;

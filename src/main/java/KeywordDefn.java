@@ -122,16 +122,16 @@ public class KeywordDefn extends BaseClass	  {
 		int times=Integer.parseInt(time);
 		WebDriverWait wait= new WebDriverWait(driver,times);
 
-		switch(locator)
+		switch(lvalue)
 		{
 		case "xpath": {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lvalue)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 		}
 		case "id": {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(lvalue)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
 		}
 		case "name": {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(lvalue)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locator)));
 		}
 		}
 		return null;
