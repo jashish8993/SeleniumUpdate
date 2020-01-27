@@ -4,12 +4,10 @@ public class Data_methods extends BaseClass {
 	static KeywordDefn key=new KeywordDefn();
 	static Utility util=new Utility();
 
-	@Test
-	public static void DataMethod() throws IOException,NullPointerException,ArrayIndexOutOfBoundsException, InterruptedException	{
-
-		for(int j=0;j<util.sheetcount;j++)
-		{
-			String Data[][]=util.readData(j);
+	
+	public  void DataMethod() throws IOException,NullPointerException,ArrayIndexOutOfBoundsException, InterruptedException	{
+		//System.out.println("the data is  "+util.readData());	
+		String Data[][]=util.readData();
 			for(int i=1;i<util.rowCount+1;i++)
 			{
 				logger.info("Currently performing \t : " + Data[i][0]);
@@ -106,4 +104,3 @@ public class Data_methods extends BaseClass {
 
 		}
 	}
-}

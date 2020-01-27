@@ -14,37 +14,33 @@ public class Utility  extends BaseClass {
 	//String str=System.getProperty("user.dir") + "\\" + s.sheetname();
 	Sheet sh=new Sheet();
 	
-	public static String fpath=System.getProperty("user.dir") + "\\ashish.xls";
+	//public static String fpath=System.getProperty("user.dir") + "\\ashish.xls";
 	String fpath1;
 	HSSFCell Data1;
-	static FileInputStream files=null;
-	static HSSFWorkbook wb=null;
-	static HSSFSheet ws=null;
+	 FileInputStream files=null;
+	 static HSSFWorkbook wb=null;
+	 HSSFSheet ws=null;
 	int rowCount;
 	public  int sheetcount;
 	public  int colCount;
+	Data_methods dat =new Data_methods();
 
-	public  Utility() throws NullPointerException
+	public void  Utilities(String fpath1) throws NullPointerException
 	{
 		try {
-			String[] str=sh.sheetname();
-			for(int i=1;i<str.length;i++)
-			{
-				fpath1=System.getProperty("user.dir")+ "\\" + str[i];
-				System.out.println(fpath1);
-			}
-
 			files=new FileInputStream(fpath1);
 			wb=new HSSFWorkbook(files);
 			sheetcount=wb.getNumberOfSheets();
+			//System.out.println("sheetcount of sheet" +fpath1 +"is" +sheetcount);
+			dat.DataMethod();
 		} catch (Exception e) {
 
 			e.printStackTrace();
 		}
 
 	}
-	public  String[][] readData(int index) throws IOException,NullPointerException	 {	
-		ws=wb.getSheetAt(index);
+	public  String[][] readData() throws IOException,NullPointerException	 {	
+		ws=Utility.wb.getSheetAt(0);
 		rowCount=ws.getLastRowNum();
 		//System.out.println(rowCount);
 		colCount=ws.getRow(0).getLastCellNum();

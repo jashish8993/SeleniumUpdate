@@ -22,10 +22,10 @@ public class Sheet {
 	public HSSFCell cell;
 	public HSSFRow row;
 	String Data[]=new String[3];
-
+String fpath=System.getProperty("user.dir") + "\\" + "New Microsoft Excel Worksheet.xls";
 	public String[]  sheetname() throws Exception 
 	{
-			file=new File("C:\\Users\\jashi\\Desktop\\New Microsoft Excel Worksheet.xls");
+			file=new File(fpath);
 			str=new FileInputStream(file);
 			wb=new HSSFWorkbook(str);
 			ws=wb.getSheetAt(0);
@@ -42,41 +42,5 @@ public class Sheet {
 
 	}
 
-	private String cellToString(HSSFCell cell) {
-		CellType type;
-		Object result;
-		if(cell==null)
-			return null;
-		type = cell.getCellType();	
-		//System.out.println(type);
-
-		switch (type){
-		case NUMERIC :
-			if (DateUtil.isCellDateFormatted(cell)) {
-				SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-				result = dateFormat.format(cell.getDateCellValue());
-			} else {
-				Double value = cell.getNumericCellValue();
-				Long longValue = value.longValue();
-				result = new String(longValue.toString());
-			}
-			break;
-		case STRING : 
-			result = cell.getStringCellValue();
-			break;
-		case BOOLEAN:
-			result=cell.getBooleanCellValue();
-			break;
-		case BLANK:
-			result=cell.getColumnIndex();
-			break;
-		case FORMULA:
-			result=cell.getCellFormula();
-			break;
-		default :
-			//System.out.println(cell.getCellStyle());
-			throw new RuntimeException("We have encountered an Unsupportd cell and Cell type is " + cell.getCellType());			
-		}
-		return result.toString();
-	}
+	
 }
