@@ -11,7 +11,7 @@ public class KeywordDefn extends BaseClass	  {
 	{
 		if(url.equals(""))
 		{
-			logger.info("Url of the application is not accessible");
+			logger.info("Url of the application is not accessible from the excel file provided");
 		}
 		else
 		{

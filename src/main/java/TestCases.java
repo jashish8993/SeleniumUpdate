@@ -6,22 +6,24 @@ public class TestCases extends BaseClass{
 	Utility util=new Utility();
 	@Test
 	public void Testing() throws Exception{
-		String fpath1;
-		//System.out.println(str);
-		String[] str1=s.getSheetName();
-		//logger.info("Total number of sheets are  "+str1.length);
-		for(int i=1;i<str1.length;i++)
-		{
-
-			fpath1=System.getProperty("user.dir")+ "\\DataFiles\\" + str1[i];
-			//System.out.println(fpath1);
-			if(str1[i]==null)
+		try {
+			String fpath1;
+			String[] str1=s.getSheetName();
+			for(int i=1;i<str1.length;i++)
 			{
 
+				fpath1=System.getProperty("user.dir")+ "\\DataFiles\\" + str1[i];
+				if(str1[i]==null)
+				{
+
+				}
+				else {
+					util.Utilities(fpath1);
+				}
 			}
-			else {
-				util.Utilities(fpath1);
-			}}
+		}  catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 }
